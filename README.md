@@ -102,15 +102,3 @@ Agro-E-commerce-Demo/
 ## Contributing
 
 Contributions are welcome! If you would like to contribute, please fork the repository and create a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-### Key Features:
-- Organized into clear sections with headings and subheadings.
-- Step-by-step instructions on running the application.
-- Folder structure example included for clarity.
-
-Feel free to copy and paste this into your README file!
