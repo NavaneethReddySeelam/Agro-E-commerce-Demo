@@ -1,5 +1,3 @@
-Here’s the complete README with the suggested changes incorporated in one continuous format:
-
 ```markdown
 # Agriculture E-Commerce Application
 
