@@ -1,0 +1,187 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background for a clean look */
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #333; /* Dark gray for headings */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Home Page Styles */
+.home {
+    text-align: center;
+    padding: 60px 20px;
+    background: url('../public/bg.jpg') no-repeat center center/cover; /* Add a background image */
+    color: white;
+}
+
+.home h1 {
+    font-size: 2.5em;
+}
+
+.home p {
+    font-size: 1.2em;
+}
+
+/* Farmer Page Styles */
+.farmer-page {
+    padding: 20px;
+}
+
+.product-input {
+    margin: 10px 0;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 220px; /* Adjust width as necessary */
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Buyer Page Styles */
+.buyer-page {
+    padding: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 220px; /* Adjust width as necessary */
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Cart Page Styles */
+.cart-page {
+    padding: 20px;
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 600px; /* Max width for cart items */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    max-width: 50px; /* Set a fixed width for cart images */
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Buttons */
+.add-product,
+.add-to-cart,
+.register-button,
+.login-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Full width for buttons */
+}
+
+.add-product:hover,
+.add-to-cart:hover,
+.register-button:hover,
+.login-button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+/* Quantity Buttons */
+.quantity-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.quantity-buttons button {
+    margin: 0 5px;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

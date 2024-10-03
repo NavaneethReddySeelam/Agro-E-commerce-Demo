@@ -1,0 +1,4 @@
+# Frontend dependencies
+react
+react-dom
+react-router-dom

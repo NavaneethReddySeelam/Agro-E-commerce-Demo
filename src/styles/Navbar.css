@@ -1,0 +1,56 @@
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px; /* Space between items */
+}
+
+.nav-links a {
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-links a:hover {
+    color: #e7f1e7; /* Light green on hover */
+}
+
+/* Logo */
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Button Styles */
+.nav-button {
+    background-color: #fff; /* White background for buttons */
+    color: #4CAF50; /* Green text */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background-color: #e7f1e7; /* Light green on hover */
+    color: #4CAF50; /* Green text */
+}

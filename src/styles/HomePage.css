@@ -1,0 +1,91 @@
+/* General Styles for Home Page */
+.home-page {
+    padding: 100px 20px 20px 20px; /* Add top padding to make room for the navbar */
+    margin: 0;
+    text-align: center;
+    background-image: url('D:/JFSD-Farmer/agro-ecommerce/public/bg.jpg'); /* Set your background image URL */
+    background-size: cover;
+    min-height: 100vh; /* Minimum height to cover full viewport */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff; /* White text color for visibility */
+    box-sizing: border-box; /* Ensure padding and border are included in element width/height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Container for sections with a semi-transparent background */
+.section-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px; /* Set a maximum width for better readability */
+    color: #fff; /* White text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better depth */
+    box-sizing: border-box; /* Include padding and borders in the container size */
+    overflow-wrap: break-word; /* Ensure text does not overflow the container */
+}
+
+/* Ensures containers stay within the viewport */
+.section-container * {
+    max-width: 100%; /* Prevent elements from exceeding the width of the container */
+}
+
+.home-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.home-description {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-top: 40px;
+    color: #4CAF50;
+}
+
+.section-content {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.feature-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.feature-item {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: #4CAF50;
+}
+
+/* Footer styles */
+.footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
