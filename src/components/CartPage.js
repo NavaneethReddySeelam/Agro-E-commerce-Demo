@@ -18,9 +18,8 @@ const Cart = ({ cart, onRemoveFromCart, onIncrementQuantity, onDecrementQuantity
     };
 
     const handleBuy = () => {
-        // Implement buy logic (e.g., API call, clearing cart, etc.)
         alert("Thank you for your purchase!");
-        // Clear the cart logic can go here (if needed)
+        // Optional: Add logic to clear the cart or process the order.
     };
 
     return (

@@ -39,7 +39,6 @@
   },
   "description": "```markdown\r # Agriculture E-Commerce Application",
   "main": "index.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC"

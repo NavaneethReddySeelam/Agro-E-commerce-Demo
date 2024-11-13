@@ -1,94 +1,72 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FarmerPage from './components/FarmerPage';
 import BuyerPage from './components/BuyerPage';
-import CartPage from './components/CartPage'; 
-import HomePage from './components/HomePage'; 
+import Cart from './components/CartPage';
+import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
+import Navbar from './components/Navbar';
+import { product_list } from './components/products';
 import './styles.css';
 
 const App = () => {
-    const [products, setProducts] = useState([]); // Holds all products
-    const [cart, setCart] = useState([]); // Holds products added to the cart
+    const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    useEffect(()=>{
+        setProducts(product_list)
+    },[])
 
-    const handleAddProduct = (product) => {
-        setProducts([...products, product]); // Add new product to the products array
-    };
 
     const handleAddToCart = (product) => {
         const cartProduct = cart.find((item) => item.name === product.name);
         if (cartProduct) {
-            setCart(cart.map((item) => item.name === product.name ? { ...item, quantity: item.quantity + 1 } : item));
+            setCart(cart.map((item) =>
+                item.name === product.name ? { ...item, quantity: item.quantity + 1 } : item
+            ));
         } else {
             setCart([...cart, { ...product, quantity: 1 }]);
         }
     };
 
+    const handleRemoveFromCart = (index) => {
+        setCart(cart.filter((_, i) => i !== index));
+    };
+
     const handleIncrementQuantity = (index) => {
-        const updatedCart = [...cart];
-        updatedCart[index].quantity += 1;
-        setCart(updatedCart);
+        setCart(cart.map((item, i) =>
+            i === index ? { ...item, quantity: item.quantity + 1 } : item
+        ));
     };
 
     const handleDecrementQuantity = (index) => {
-        const updatedCart = [...cart];
-        if (updatedCart[index].quantity > 1) {
-            updatedCart[index].quantity -= 1;
-            setCart(updatedCart);
-        }
-    };
-
-    const handleRemoveFromCart = (index) => {
-        const updatedCart = cart.filter((_, i) => i !== index);
-        setCart(updatedCart);
-    };
-
-    const handleLogin = () => {
-        setIsLoggedIn(true);
-    };
-
-    const handleLogout = () => {
-        setIsLoggedIn(false);
+        setCart(cart.map((item, i) =>
+            i === index ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
+        ));
     };
 
     return (
         <Router>
-            <nav className="navbar">
-                <ul className="nav-links">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/farmer">Farmer Page</Link></li>
-                    <li><Link to="/buyer">Buyer Page</Link></li>
-                    <li><Link to="/cart">Cart</Link></li>
-                    {isLoggedIn ? (
-                        <li><button onClick={handleLogout} className="nav-button">Logout</button></li>
-                    ) : (
-                        <>
-                            <li><Link to="/login">Login</Link></li>
-                            <li><Link to="/register">Register</Link></li>
-                        </>
-                    )}
-                </ul>
-            </nav>
-
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/farmer" element={<FarmerPage onAddProduct={handleAddProduct} />} />
-                <Route path="/buyer" element={<BuyerPage 
-                    products={products} 
-                    onAddToCart={handleAddToCart} 
-                />} />
-                <Route path="/cart" element={<CartPage 
-                    cart={cart} 
-                    onIncrementQuantity={handleIncrementQuantity}
-                    onDecrementQuantity={handleDecrementQuantity}
-                    onRemoveFromCart={handleRemoveFromCart}
-                    products={products} // Pass products to CartPage
-                />} />
-                <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
-                <Route path="/register" element={<RegisterPage />} />
-            </Routes>
+            <div className="App">
+                <Navbar isLoggedIn={isLoggedIn} />
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/farmer" element={<FarmerPage products={products} setProducts={setProducts} />} />
+                    <Route path="/buyer" element={<BuyerPage products={products} onAddToCart={handleAddToCart} />} />
+                    <Route path="/cart" element={
+                        <Cart
+                            cart={cart}
+                            products={products}
+                            onRemoveFromCart={handleRemoveFromCart}
+                            onIncrementQuantity={handleIncrementQuantity}
+                            onDecrementQuantity={handleDecrementQuantity}
+                        />
+                    } />
+                    <Route path="/login" element={<LoginPage onLoginStatusChange={setIsLoggedIn} />} />
+                    <Route path="/register" element={<RegisterPage />} />
+                </Routes>
+            </div>
         </Router>
     );
 };

@@ -1,8 +1,7 @@
-/* CartPage.css */
-
 /* General Styles for Cart Page */
 .cart-page {
     padding: 20px;
+    margin-top: 80px; /* Add margin to prevent overlap with navbar */
 }
 
 .cart-list {

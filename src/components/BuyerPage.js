@@ -1,35 +1,35 @@
 import React from 'react';
-import '../styles/BuyerPage.css';
 
 const BuyerPage = ({ products, onAddToCart }) => {
+    // Group products by category
+    const groupedProducts = products.reduce((acc, product) => {
+        if (!acc[product.category]) {
+            acc[product.category] = [];
+        }
+        acc[product.category].push(product);
+        return acc;
+    }, {});
+
     return (
         <div className="buyer-page">
-            <div className="content">
-                <h1>Available Products</h1>
-
-                {/* Render products grouped by category */}
-                {['vegetable', 'fruit', 'others'].map((category) => (
-                    <div key={category}>
-                        <h2>{category.charAt(0).toUpperCase() + category.slice(1) + 's'}</h2>
-                        <div className="product-list">
-                            {products.filter(product => product.category === category).length > 0 ? (
-                                products.filter(product => product.category === category).map((product, index) => (
-                                    <div key={index} className="product-item">
-                                        <img src={product.imageUrl} alt={product.name} />
-                                        <h3>{product.name}</h3>
-                                        <p>Price: ${product.price}</p>
-                                        <p>Quantity: {product.quantity}</p>
-                                        <p>{product.description}</p>
-                                        <button className="add-to-cart" onClick={() => onAddToCart(product)}>Add to Cart</button>
-                                    </div>
-                                ))
-                            ) : (
-                                <p>No {category}s available.</p>
-                            )}
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <h1>Available Products</h1>
+            {Object.keys(groupedProducts).map((category) => (
+                <div key={category} className="category-section">
+                    <h2>{category.charAt(0).toUpperCase() + category.slice(1)}s</h2>
+                    <ol className="product-list">
+                        {groupedProducts[category].map((product) => (
+                            <li key={product.id} className="product-card">
+                                <img src={product.imageUrl} alt={product.productName} />
+                                <h4>{product.productName}</h4>
+                                <p>Price: ${product.pricePerUnit} per {product.unit}</p>
+                                <p>Available: {product.quantity} {product.unit}</p>
+                                <p>Description: {product.description}</p>
+                                <button onClick={() => onAddToCart(product)}>Add to Cart</button>
+                            </li>
+                        ))}
+                    </ol>
+                </div>
+            ))}
         </div>
     );
 };

@@ -1,18 +1,22 @@
 .App {
   text-align: center;
+  margin-top: 80px; /* Adjust for the fixed navbar height */
 }
 
+/* For the logo */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* Add animation for spinning logo */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Header Styling */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,12 +26,15 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-top: 80px; /* Adjust for the fixed navbar height */
 }
 
+/* App Link Styling */
 .App-link {
   color: #61dafb;
 }
 
+/* Keyframes for logo spin animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
