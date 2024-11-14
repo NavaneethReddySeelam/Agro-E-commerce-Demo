@@ -1,15 +1,26 @@
 /* General Styles for Cart Page */
 .cart-page {
     padding: 20px;
-    margin-top: 80px; /* Add margin to prevent overlap with navbar */
+    margin-top: 80px; /* Prevent overlap with navbar */
+    background-color: #f8f8f8; /* Light background for the entire page */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centers content horizontally */
+    justify-content: flex-start; /* Keeps content at the top */
+    width: 100%;
 }
 
+/* Ensure smooth transition when items are added or removed */
 .cart-list {
     display: flex;
     flex-direction: column;
     margin: 10px 0;
+    max-height: 600px; /* Prevent too much content from overflowing */
+    overflow-y: auto;  /* Allows scrolling if content is too long */
+    width: 100%;
 }
 
+/* Individual Cart Item Styles */
 .cart-item {
     display: flex;
     justify-content: space-between;
@@ -19,19 +30,38 @@
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for adding/removing items */
+    width: 100%;
 }
 
 .cart-item img {
-    max-width: 50px; /* Set a fixed width for cart images */
-    height: auto;
+    width: 60px;  /* Set a fixed width for cart images */
+    height: 60px; /* Set fixed height for consistency */
+    object-fit: cover; /* Ensures the image doesn't distort */
     border-radius: 4px;
+    margin-right: 15px;
+}
+
+.cart-item h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cart-item p {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 .total-cost {
     font-size: 1.5rem;
+    font-weight: bold;
     margin-top: 20px;
+    text-align: right;
 }
 
+/* Button Styles */
 .remove-from-cart {
     background-color: #f44336; /* Red */
     color: white;
@@ -44,4 +74,60 @@
 
 .remove-from-cart:hover {
     background-color: #d32f2f; /* Darker red */
+}
+
+/* Increment/Decrement Button Styles */
+.cart-item button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item button:disabled {
+    background-color: #dcdcdc;
+    cursor: not-allowed;
+}
+
+/* Purchased Label Styling */
+.purchased-label {
+    color: green;
+    font-weight: bold;
+}
+
+/* Buy Button Styles */
+.buy-button {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: auto; /* Button adjusts based on content */
+    max-width: 300px; /* Optional: limits the max width of the button */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #218838;
+}
+
+/* Optional: Smooth transition for cart items to avoid sudden layout shifts */
+.cart-item {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cart-page, .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centers all children horizontally */
+    justify-content: flex-start; /* Keeps content at the top */
+    width: 100%;
 }

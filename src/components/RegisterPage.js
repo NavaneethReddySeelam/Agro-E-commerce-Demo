@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/RegisterPage.css';
 
 const RegisterPage = () => {
@@ -7,28 +7,38 @@ const RegisterPage = () => {
     const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [role, setRole] = useState('buyer'); // Default role is 'buyer'
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
-        
-        // Get existing users from localStorage or initialize an empty array if none
+
+        // Basic email format validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // Enforce minimum password length
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters long.');
+            return;
+        }
+
+        // Check if the email already exists in localStorage
         const users = JSON.parse(localStorage.getItem('users')) || [];
-        
-        // Check if the user with this email already exists
-        const userExists = users.find(u => u.email === email);
+        const userExists = users.find((u) => u.email === email);
 
         if (userExists) {
             alert('User already exists!');
         } else {
-            // Create new user object with all details
-            const newUser = { username, lastname, email, password };
+            const newUser = { username, lastname, email, password, role };
             users.push(newUser);
-            
-            // Store updated users array in localStorage
             localStorage.setItem('users', JSON.stringify(users));
             alert('Registration successful!');
-            navigate('/login');
+            navigate('/login'); // Redirect to login page after successful registration
         }
     };
 
@@ -58,16 +68,35 @@ const RegisterPage = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                    <button type="submit">Register</button>
+                    <div className="password-field">
+                        <input
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                        <button
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="show-password-btn"
+                        >
+                            {showPassword ? 'Hide' : 'Show'}
+                        </button>
+                    </div>
+                    
+                    {/* Role selection for user */}
+                    <div className="role-selection">
+                        <label>Role:</label>
+                        <select value={role} onChange={(e) => setRole(e.target.value)}>
+                            <option value="buyer">Buyer</option>
+                            <option value="farmer">Farmer</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" className="register-btn">Register</button>
                 </form>
-                <p>Already have an account? <a href="/login">Login here</a></p>
+                <p>Already have an account? <Link to="/login">Login here</Link></p>
             </div>
         </div>
     );
