@@ -1,7 +1,24 @@
-/* General Styles for Buyer Page */
+/* General Styling for Buyer Page */
 .buyer-page {
     padding: 20px;
-    margin-top: 80px; /* Add margin to prevent overlap with navbar */
+    margin-top: 80px; /* Adjust for navbar overlap */
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.category-section {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
 }
 
 .product-list {
@@ -10,7 +27,7 @@
     justify-content: center;
 }
 
-.product-item {
+.product-card {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -19,35 +36,54 @@
     padding: 15px;
     text-align: center;
     width: 220px;
+    transition: box-shadow 0.3s;
 }
 
-.product-item img {
+.product-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product-price,
+.product-quantity,
+.product-description {
+    font-size: 0.9em;
+    margin: 5px 0;
 }
 
 .add-to-cart {
-    background-color: #008CBA; /* Blue */
+    background-color: #28a745; /* Green */
     color: white;
     border: none;
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 .add-to-cart:hover {
-    background-color: #007bb5; /* Darker blue */
+    background-color: #218838; /* Darker green */
 }
 
-.cart-list {
-    margin-top: 30px;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
+.sold-out {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: not-allowed;
+    margin-top: 10px;
 }
