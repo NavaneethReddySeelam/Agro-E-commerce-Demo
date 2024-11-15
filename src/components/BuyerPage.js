@@ -44,8 +44,8 @@ const BuyerPage = ({ products, onAddToCart }) => {
                     Spices
                 </button>
                 <button
-                    className={selectedCategory === 'organic' ? 'active' : ''}
-                    onClick={() => setSelectedCategory('organic')}
+                    className={selectedCategory === 'organicproducts' ? 'active' : ''}
+                    onClick={() => setSelectedCategory('organicproducts')}
                 >
                     Organic Products
                 </button>
