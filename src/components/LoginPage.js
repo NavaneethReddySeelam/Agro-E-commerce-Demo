@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "../styles/LoginPage.css";
 
 const LoginPage = ({ onLoginStatusChange, onRoleChange }) => {
     const [email, setEmail] = useState('');
