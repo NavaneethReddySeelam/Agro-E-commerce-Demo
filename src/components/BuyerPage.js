@@ -37,6 +37,18 @@ const BuyerPage = ({ products, onAddToCart }) => {
                 >
                     Grains
                 </button>
+                <button
+                    className={selectedCategory === 'spices' ? 'active' : ''}
+                    onClick={() => setSelectedCategory('spices')}
+                >
+                    Spices
+                </button>
+                <button
+                    className={selectedCategory === 'organic' ? 'active' : ''}
+                    onClick={() => setSelectedCategory('organic')}
+                >
+                    Organic Products
+                </button>
             </div>
 
             {filteredProducts.length > 0 ? (

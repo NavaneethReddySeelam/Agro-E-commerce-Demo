@@ -7,15 +7,17 @@ const Navbar = ({ isLoggedIn, role, onLogout }) => {
             <ul className="nav-links">
                 <li><Link to="/">Home</Link></li>
 
+                {/* For logged-in farmers */}
+                {isLoggedIn && role === 'farmer' && (
+                    <li><Link to="/farmer">Farmer Page</Link></li>
+                )}
+
                 {/* For logged-in farmers and buyers */}
                 {isLoggedIn && (role === 'farmer' || role === 'buyer') && (
                     <li><Link to="/buyer">Buyer Page</Link></li>
                 )}
 
-                {/* For logged-in farmers */}
-                {isLoggedIn && role === 'farmer' && (
-                    <li><Link to="/farmer">Farmer Page</Link></li>
-                )}
+
 
                 {/* Cart and Logout for logged-in users */}
                 {isLoggedIn && (

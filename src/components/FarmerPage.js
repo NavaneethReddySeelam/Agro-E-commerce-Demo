@@ -37,10 +37,13 @@ const FarmerPage = ({ products, setProducts }) => {
     return (
         <div className="farmer-page">
             <h1>Add Products</h1>
+            
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="vegetable">Vegetable</option>
                 <option value="fruit">Fruit</option>
                 <option value="grains">Grains</option>
+                <option value="spices">Spices</option>
+                <option value="organic">Organic Products</option>
             </select>
 
             <input

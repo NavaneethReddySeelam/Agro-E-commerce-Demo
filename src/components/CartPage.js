@@ -26,13 +26,13 @@ const Cart = ({ cart, products, onRemoveFromCart, onIncrementQuantity, onDecreme
 
     return (
         <div className="cart-page">
-            <div className="content">
+            <div className="cart-container">
                 <h1>Your Cart</h1>
                 <div className="cart-list">
                     {cart.map((item, index) => {
                         const availableQuantity = getAvailableQuantity(item);
                         const price = item.pricePerUnit || 0;
-
+    
                         return (
                             <div key={index} className="cart-item">
                                 <img src={item.imageUrl} alt={item.productName} />
@@ -76,6 +76,7 @@ const Cart = ({ cart, products, onRemoveFromCart, onIncrementQuantity, onDecreme
             </div>
         </div>
     );
+    
 };
 
 export default Cart;

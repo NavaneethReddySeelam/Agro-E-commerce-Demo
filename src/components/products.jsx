@@ -148,5 +148,174 @@ export const product_list = [
         "pricePerUnit": 1.4,
         "imageUrl": "/images/barley.jpg",
         "description": "Healthy barley, perfect for soups and salads."
-    }
-];
+    },
+    {
+        "id": 16,
+        "productName": "Black Pepper",
+        "category": "spices",
+        "quantity": 10,
+        "unit": "kg",
+        "pricePerUnit": 5.0,
+        "imageUrl": "/images/blackpepper.jpg",
+        "description": "Freshly ground black pepper, great for seasoning."
+    },
+    {
+        "id": 17,
+        "productName": "Nutmeg",
+        "category": "spices",
+        "quantity": 5,
+        "unit": "kg",
+        "pricePerUnit": 8.0,
+        "imageUrl": "/images/nutmeg.jpg",
+        "description": "Aromatic nutmeg, perfect for desserts and cooking."
+    },
+    {
+        "id": 18,
+        "productName": "Cardamom",
+        "category": "spices",
+        "quantity": 7,
+        "unit": "kg",
+        "pricePerUnit": 6.0,
+        "imageUrl": "/images/cardamom.jpg",
+        "description": "Fragrant cardamom, a popular spice for sweet and savory dishes."
+    },
+    {
+        "id": 19,
+        "productName": "Cinnamon Sticks",
+        "category": "spices",
+        "quantity": 5,
+        "unit": "kg",
+        "pricePerUnit": 10.0,
+        "imageUrl": "/images/cinnamonsticks.jpg",
+        "description": "High-quality cinnamon sticks, great for flavoring drinks and dishes."
+    },
+    {
+        "id": 20,
+        "productName": "Coconut Oil",
+        "category": "organicproducts",
+        "quantity": 30,
+        "unit": "liters",
+        "pricePerUnit": 12.0,
+        "imageUrl": "/images/coconutoil.jpg",
+        "description": "Pure coconut oil, ideal for cooking and skincare."
+    },
+    {
+        "id": 21,
+        "productName": "Neem Oil",
+        "category": "organicproducts",
+        "quantity": 25,
+        "unit": "liters",
+        "pricePerUnit": 10.0,
+        "imageUrl": "/images/neemoil.jpg",
+        "description": "Organic neem oil, ideal for agriculture and skincare."
+    },
+    {
+        "id": 22,
+        "productName": "Honey",
+        "category": "organicproducts",
+        "quantity": 20,
+        "unit": "kg",
+        "pricePerUnit": 8.0,
+        "imageUrl": "/images/honey.jpg",
+        "description": "Natural and pure honey, a healthy alternative to sugar."
+    },
+    {
+        "id": 23,
+        "productName": "Mirchi Spice",
+        "category": "spices",
+        "quantity": 15,
+        "unit": "kg",
+        "pricePerUnit": 4.0,
+        "imageUrl": "/images/mirchispice.jpg",
+        "description": "Spicy chili powder, adds heat to your dishes."
+    },
+    {
+        "id": 24,
+        "productName": "Star Anise",
+        "category": "spices",
+        "quantity": 10,
+        "unit": "kg",
+        "pricePerUnit": 7.0,
+        "imageUrl": "/images/staranise.jpg",
+        "description": "Fragrant star anise, used in stews and soups."
+    },
+    {
+        "id": 25,
+        "productName": "Onion",
+        "category": "vegetable",
+        "quantity": 100,
+        "unit": "kg",
+        "pricePerUnit": 1.0,
+        "imageUrl": "/images/onion.jpg",
+        "description": "Fresh onions, essential for cooking, with a rich flavor and aroma."
+    },
+    {
+        "id": 26,
+        "productName": "Turmeric",
+        "category": "spice",
+        "quantity": 60,
+        "unit": "kg",
+        "pricePerUnit": 3.5,
+        "imageUrl": "/images/turmeric.jpg",
+        "description": "Golden turmeric powder, essential in cooking and health remedies."
+    },
+    {
+        "id": 27,
+        "productName": "Ginger",
+        "category": "spice",
+        "quantity": 50,
+        "unit": "kg",
+        "pricePerUnit": 3.0,
+        "imageUrl": "/images/ginger.jpg",
+        "description": "Fresh ginger root, widely used in cooking for a warm, spicy flavor."
+    },
+    {
+        "id": 28,
+        "productName": "Garlic",
+        "category": "vegetable",
+        "quantity": 80,
+        "unit": "kg",
+        "pricePerUnit": 2.5,
+        "imageUrl": "/images/garlic.jpg",
+        "description": "Aromatic garlic cloves, perfect for adding depth to any dish."
+    },
+    {
+        "id": 29,
+        "productName": "Green Chili",
+        "category": "vegetable",
+        "quantity": 60,
+        "unit": "kg",
+        "pricePerUnit": 1.8,
+        "imageUrl": "/images/greenchili.jpg",
+        "description": "Fresh green chilies, great for spicy and flavorful dishes."
+    },
+    {
+        "id": 30,
+        "productName": "Cumin Seeds",
+        "category": "spice",
+        "quantity": 40,
+        "unit": "kg",
+        "pricePerUnit": 4.0,
+        "imageUrl": "/images/cumin.jpg",
+        "description": "Aromatic cumin seeds, a staple spice in many cuisines."
+    },
+    {
+        "id": 31,
+        "productName": "Mustard Seeds",
+        "category": "spice",
+        "quantity": 30,
+        "unit": "kg",
+        "pricePerUnit": 3.0,
+        "imageUrl": "/images/mustard.jpg",
+        "description": "Pungent mustard seeds, ideal for tempering and flavoring."
+    },
+    {
+        "id": 32,
+        "productName": "Coconut",
+        "category": "organicproduct",
+        "quantity": 50,
+        "unit": "pieces",
+        "pricePerUnit": 1.5,
+        "imageUrl": "/images/coconut.jpg",
+        "description": "Whole coconuts, perfect for cooking, oil extraction, and desserts."
+    }];
